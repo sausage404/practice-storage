@@ -37,10 +37,10 @@
                             <i class="bi bi-person-fill"></i>
                         </button>
                     <?php } else { ?>
-                        <a href="auth/login" class="btn btn-success my-2 my-sm-0 ms-2" type="submit">
+                        <a href="auth/login.php" class="btn btn-success my-2 my-sm-0 ms-2" type="submit">
                             <i class="bi bi-person-fill-lock"></i>
                         </a>
-                        <a href="auth/register" class="btn btn-success my-2 my-sm-0 ms-2" type="submit">
+                        <a href="auth/register.php" class="btn btn-success my-2 my-sm-0 ms-2" type="submit">
                             <i class="bi bi-person-plus-fill"></i>
                         </a>
                     <?php } ?>
