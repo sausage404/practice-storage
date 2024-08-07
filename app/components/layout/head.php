@@ -1,4 +1,7 @@
-<?php $URL = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . "/web-race-php"; ?>
+<?php
+session_start();
+$URL = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . "/test-mode";
+?>
 
 <head>
     <meta charset="UTF-8">
