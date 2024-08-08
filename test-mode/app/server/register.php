@@ -27,7 +27,7 @@ if (getUserByEmail($email)->rowCount() > 0) {
     exit();
 }
 
-$query = $conn->prepare("INSERT INTO users (id, username, email, password) VALUES (?, ?, ?, ?)");
-$query->execute([uuid(), $username, $email, password_hash($password, PASSWORD_BCRYPT)]);
+$query = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
+$query->execute([$username, $email, password_hash($password, PASSWORD_BCRYPT)]);
 
 header('Location: /test-mode/auth/login.php');

@@ -19,21 +19,21 @@
                     </div>
                 <?php endif; ?>
                 <div class="row">
-                    <div class="col-md-6 mb-3">
+                    <div class="col-md-6 mb">
                         <label for="name" class="form-label">ไอดี</label>
                         <input type="text" class="form-control" name="id" id="id" value="<?= $_SESSION['user']['id'] ?>" readonly>
                     </div>
-                    <div class="col-md-6 mb-3">
+                    <div class="col-md-6 mb">
                         <label for="username" class="form-label">ชื่อผู้ใช้งาน</label>
                         <input type="text" class="form-control" name="username" id="username" value="<?= $_SESSION['user']['username'] ?>" required>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6 mb-3">
+                    <div class="col-md-6 mb">
                         <label for="email" class="form-label">อีเมล</label>
                         <input type="email" class="form-control" name="email" id="email" value="<?= $_SESSION['user']['email'] ?>" required>
                     </div>
-                    <div class="col-md-6 mb-3">
+                    <div class="col-md-6 mb">
                         <label for="role" class="form-label">สิทธิ์</label>
                         <input type="text" class="form-control" name="role" id="role" value="<?= $_SESSION['user']['role'] ?>" readonly>
                     </div>
@@ -46,20 +46,20 @@
         </form>
     </div>
 </div>
-<div class="position-fixed top-0 w-100 z-3">
+<div class="position-fixed top-0 w-100 z">
     <div class="bg-success text-center py-1 px-2 text-white overflow-auto text-nowrap head">
         หากเกิดปัญหาในการใช้งาน กรุณาติดต่อ 081-999-9999 หรือ 0x9fL@example.com
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-md">
         <div class="container-xl">
-            <a class="navbar-brand fw-bolder" href="/test-mode/index.php">หอมทรัพย์ อาหารสัตว์</a>
+            <a class="navbar-brand fw-bolder" href="/test-mode/">หอมทรัพย์ อาหารสัตว์</a>
             <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavId">
                 <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/test-mode/index.php" aria-current="page">หน้าหลัก
+                        <a class="nav-link active" href="/test-mode/" aria-current="page">หน้าหลัก
                             <span class="visually-hidden">(current)</span></a>
                     </li>
                     <li class="nav-item">
@@ -101,4 +101,22 @@
             </div>
         </div>
     </nav>
+    <div class="bg-light border-bottom border-top p-2 overflow-auto head">
+        <div class="container text-center text-nowrap">
+            <div class="d-flex" style="flex-wrap: nowrap;gap: 1rem;">
+                <a href="/test-mode/admin/order.php" class="col text-decoration-none nav-link">
+                    จัดการออเดอร์ (Order)
+                </a>
+                <a href="/test-mode/admin/product.php" class="col text-decoration-none nav-link">
+                    จัดการสินค้า (Product)
+                </a>
+                <a href="/test-mode/admin/webboard.php" class="col text-decoration-none nav-link">
+                    จัดการเว็บบอร์ด (Webboard)
+                </a>
+                <a href="/test-mode/admin/user.php" class="col text-decoration-none nav-link">
+                    จัดการผู้ใช้งาน (User)
+                </a>
+            </div>
+        </div>
+    </div>
 </div>

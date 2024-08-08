@@ -6,20 +6,11 @@ try {
     echo $e->getMessage();
 }
 
-function uuid()
-{
-    $bytes = random_bytes(3);
-    $uuid = bin2hex($bytes);
-    return strtoupper($uuid);
-}
-
 $referer = $_SERVER['REQUEST_URI'];
 $parsed_url = parse_url($referer);
 
-
 if (strpos($parsed_url['path'], "admin")) {
-    $role = $_SESSION['role'];
-    print_r($role);
+    $role = $_SESSION['user']['role'];
     if ($role != "admin") {
         header("Location: /test-mode/index.php");
     }
