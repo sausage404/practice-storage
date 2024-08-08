@@ -41,7 +41,7 @@ require "../config.php";
                     </form>
                 </div>
             </div>
-            <div class="d-none d-md-block col-md-6" style="background-image: url(https://ga-petfoodpartners.co.uk/content/uploads/2021/11/Pet-Food-Trends-Main-Banner.png);">
+            <div class="d-none d-md-block col-md-6" style="background-image: url(https://ga-petfoodpartners.co.uk/content/uploads/2021/11/Pet-Food-Trends-Main-Banner.png);background-repeat: no-repeat;background-size: cover;">
             </div>
         </div>
     </div>

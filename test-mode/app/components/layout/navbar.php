@@ -5,7 +5,7 @@
 </style>
 <div class="modal fade" id="account" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered  modal-md" role="document">
-        <div class="modal-content">
+        <form action="/test-mode/app/server/info.php" method="post" class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title fw-bold" id="modalTitleId">
                     บัญชีของคุณ
@@ -13,6 +13,11 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+                <?php if (isset($_GET['error'])) : ?>
+                    <div class="alert alert-danger" role="alert">
+                        <strong>เกิดข้อผิดพลาด</strong> <?php echo $_GET['error']; ?>
+                    </div>
+                <?php endif; ?>
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="name" class="form-label">ไอดี</label>
@@ -20,13 +25,13 @@
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="username" class="form-label">ชื่อผู้ใช้งาน</label>
-                        <input type="text" class="form-control" name="username" id="username" value="<?= $_SESSION['user']['username'] ?>" readonly>
+                        <input type="text" class="form-control" name="username" id="username" value="<?= $_SESSION['user']['username'] ?>" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="email" class="form-label">อีเมล</label>
-                        <input type="email" class="form-control" name="email" id="email" value="<?= $_SESSION['user']['email'] ?>" readonly>
+                        <input type="email" class="form-control" name="email" id="email" value="<?= $_SESSION['user']['email'] ?>" required>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="role" class="form-label">สิทธิ์</label>
@@ -35,10 +40,10 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success">บันทึก</button>
+                <button type="submit" class="btn btn-success">บันทึก</button>
                 <a href="/test-mode/app/server/logout.php" class="btn btn-danger">ออกจากระบบ</a>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 <div class="position-fixed top-0 w-100 z-3">
@@ -68,7 +73,7 @@
                     </li>
                 </ul>
                 <form class="d-flex my-2 my-lg-0">
-                    <input class="form-control me-sm-2" type="text" placeholder="Search" />
+                    <input class="form-control me-2 my-sm-0 my-2" type="text" placeholder="Search" />
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
                         <i class="bi bi-search"></i>
                     </button>
