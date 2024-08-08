@@ -8,10 +8,10 @@ $clean_url = $parsed_url['scheme'] . '://' . $parsed_url['host'] . $parsed_url['
 
 $oldEmail = $_SESSION['user']['email'];
 
-$username = $_POST['username'];
+$name = $_POST['name'];
 $email = $_POST['email'];
 
-if (!isset($username) || !isset($email)) {
+if (!isset($name) || !isset($email)) {
     header("Location: " . $clean_url . "?error=กรุณากรอกข้อมูลให้ครบถ้วน");
     exit();
 }
@@ -21,7 +21,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit();
 }
 
-$stmt = $conn->prepare("UPDATE users SET username = ?, email = ? WHERE email = ?");
-$stmt->execute([$username, $email, $oldEmail]);
+$stmt = $conn->prepare("UPDATE users SET name = ?, email = ? WHERE email = ?");
+$stmt->execute([$name, $email, $oldEmail]);
 $_SESSION['user'] = getUserByEmail($email)->fetch(PDO::FETCH_ASSOC);
 header("Location: " . $clean_url);

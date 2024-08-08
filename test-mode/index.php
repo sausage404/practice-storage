@@ -35,7 +35,7 @@ require "./config.php";
         }
     </style>
     <div class="bg-image">
-        <div class="d-flex justify-content-center align-items-center h-100 position-relative z-1">
+        <div class="d-flex justify-content-center align-items-center h-100 position-relative">
             <div class="text-center p-3 rounded-5" style="display:grid;grid-gap: 1rem;max-width: 40rem;">
                 <h1 class="text-center fw-bold">หอมทรัพย์ อาหารสัตว์</h1>
                 <h5 style="line-height: 2rem;">เว็บไซต์ที่ดีที่สุดสำหรับการซื้ออาหารสัตว์ออนไลน์! ที่นี่คุณจะพบกับผลิตภัณฑ์อาหารสัตว์หลากหลายประเภทสำหรับสัตว์เลี้ยงทุกชนิด ไม่ว่าจะเป็นสุนัข แมว ปลา นก หรือสัตว์เลี้ยงอื่นๆ เรามีทุกอย่างที่คุณต้องการ</h5>

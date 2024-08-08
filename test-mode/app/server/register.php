@@ -2,12 +2,12 @@
 require "../../config.php";
 require "../lib/query.php";
 
-$username = $_POST['username'];
+$name = $_POST['name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $confirmPassword = $_POST['confirmPassword'];
 
-if (!isset($username) || !isset($email) || !isset($password) || !isset($confirmPassword)) {
+if (!isset($name) || !isset($email) || !isset($password) || !isset($confirmPassword)) {
     header('Location: /test-mode/auth/register.php?error=กรุณากรอกข้อมูลให้ครบถ้วน');
     exit();
 }
@@ -27,7 +27,7 @@ if (getUserByEmail($email)->rowCount() > 0) {
     exit();
 }
 
-$query = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
-$query->execute([$username, $email, password_hash($password, PASSWORD_BCRYPT)]);
+$query = $conn->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
+$query->execute([$name, $email, password_hash($password, PASSWORD_BCRYPT)]);
 
 header('Location: /test-mode/auth/login.php');

@@ -19,7 +19,7 @@ if ($existProduct->rowCount() == 0) {
 
 $product = $existProduct->fetch(PDO::FETCH_ASSOC);
 
-if (!isset($name) || !isset($price) || !isset($detail) || !isset($status) || !isset($category) || !isset($image)) {
+if (!isset($name) || !isset($price) || !isset($detail) || !isset($status) || !isset($category)) {
     header('Location: /test-mode/admin/product.php?error=กรุณากรอกข้อมูลให้ครบถ้วน');
     exit();
 }
@@ -29,11 +29,13 @@ if ($file['error'] === UPLOAD_ERR_OK) {
     $allow = ['jpg', 'jpeg', 'png'];
     if (in_array($ext, $allow)) {
         $image = uniqid() . '.' . $ext;
-        move_uploaded_file($file['tmp_name'], "../uploads/" . $image);
         unlink("../uploads/" . $product['image']);
+        move_uploaded_file($file['tmp_name'], "../uploads/" . $image);
     }
 }
 
+$isImage = isset($image) ? $image : $product['image'];
+
 $stmt = $conn->prepare("UPDATE products SET name = ?, price = ?, detail = ?, status = ?, category = ?, image = ? WHERE id = ?");
-$stmt->execute([$name, $price, $detail, $status, $category, $image, $id]);
+$stmt->execute([$name, $price, $detail, $status, $category, $isImage, $id]);
 header("Location: /test-mode/admin/product.php?success=แก้ไขสินค้า $name สําเร็จ");

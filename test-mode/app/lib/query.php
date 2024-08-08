@@ -15,11 +15,11 @@ function getUserByEmail($email)
     return $query;
 }
 
-function getUserByUsername($username)
+function getUserByUsername($name)
 {
     global $conn;
-    $query = $conn->prepare("SELECT * FROM users WHERE username = ?");
-    $query->execute([$username]);
+    $query = $conn->prepare("SELECT * FROM users WHERE name = ?");
+    $query->execute([$name]);
     return $query;
 }
 

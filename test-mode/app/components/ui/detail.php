@@ -8,7 +8,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p class="p-0">
+                <p class="p-0 m-0">
                     <?= $product['detail']; ?>
                 </p>
             </div>

@@ -24,8 +24,8 @@
                         <input type="text" class="form-control" name="id" id="id" value="<?= $_SESSION['user']['id'] ?>" readonly>
                     </div>
                     <div class="col-md-6 mb">
-                        <label for="username" class="form-label">ชื่อผู้ใช้งาน</label>
-                        <input type="text" class="form-control" name="username" id="username" value="<?= $_SESSION['user']['username'] ?>" required>
+                        <label for="name" class="form-label">ชื่อผู้ใช้งาน</label>
+                        <input type="text" class="form-control" name="name" id="name" value="<?= $_SESSION['user']['name'] ?>" required>
                     </div>
                 </div>
                 <div class="row">
@@ -46,7 +46,7 @@
         </form>
     </div>
 </div>
-<div class="position-fixed top-0 w-100 z">
+<div class="position-fixed top-0 w-100 z-1">
     <div class="bg-success text-center py-1 px-2 text-white overflow-auto text-nowrap head">
         หากเกิดปัญหาในการใช้งาน กรุณาติดต่อ 081-999-9999 หรือ 0x9fL@example.com
     </div>
@@ -63,7 +63,7 @@
                             <span class="visually-hidden">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">รายการสินค้า</a>
+                        <a class="nav-link" href="/test-mode/product.php">รายการสินค้า</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">เว็บบอร์ด</a>
@@ -84,12 +84,7 @@
                         <button data-bs-toggle="modal" data-bs-target="#account" class="btn btn-success my-2 my-sm-0 ms-2" type="button">
                             <i class="bi bi-person-fill"></i>
                         </button>
-                        <?php if ($_SESSION['user']['role'] == 'admin') { ?>
-                            <a href="/test-mode/admin/index.php" class="btn btn-success my-2 my-sm-0 ms-2" type="button">
-                                <i class="bi bi-tools"></i>
-                            </a>
-                        <?php }
-                    } else { ?>
+                    <?php } else { ?>
                         <a href="/test-mode/auth/login.php" class="btn btn-success my-2 my-sm-0 ms-2" type="button">
                             <i class="bi bi-person-fill-lock"></i>
                         </a>
@@ -101,22 +96,24 @@
             </div>
         </div>
     </nav>
-    <div class="bg-light border-bottom border-top p-2 overflow-auto head">
-        <div class="container text-center text-nowrap">
-            <div class="d-flex" style="flex-wrap: nowrap;gap: 1rem;">
-                <a href="/test-mode/admin/order.php" class="col text-decoration-none nav-link">
-                    จัดการออเดอร์ (Order)
-                </a>
-                <a href="/test-mode/admin/product.php" class="col text-decoration-none nav-link">
-                    จัดการสินค้า (Product)
-                </a>
-                <a href="/test-mode/admin/webboard.php" class="col text-decoration-none nav-link">
-                    จัดการเว็บบอร์ด (Webboard)
-                </a>
-                <a href="/test-mode/admin/user.php" class="col text-decoration-none nav-link">
-                    จัดการผู้ใช้งาน (User)
-                </a>
+    <?php if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 'admin') { ?>
+        <div class="bg-light border-bottom border-top p-2 overflow-auto head">
+            <div class="container text-center text-nowrap">
+                <div class="d-flex" style="flex-wrap: nowrap;gap: 1rem;">
+                    <a href="/test-mode/admin/order.php" class="col text-decoration-none nav-link">
+                        จัดการออเดอร์ (Order)
+                    </a>
+                    <a href="/test-mode/admin/product.php" class="col text-decoration-none nav-link">
+                        จัดการสินค้า (Product)
+                    </a>
+                    <a href="/test-mode/admin/webboard.php" class="col text-decoration-none nav-link">
+                        จัดการเว็บบอร์ด (Webboard)
+                    </a>
+                    <a href="/test-mode/admin/user.php" class="col text-decoration-none nav-link">
+                        จัดการผู้ใช้งาน (User)
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
+    <?php } ?>
 </div>

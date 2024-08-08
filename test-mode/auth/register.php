@@ -22,8 +22,8 @@ require "../config.php";
                             </div>
                         <?php endif; ?>
                         <div class="mb-3">
-                            <label for="username" class="form-label">ชื่อผู้ใช้</label>
-                            <input type="text" class="form-control" id="username" name="username" placeholder="John Doe" required>
+                            <label for="name" class="form-label">ชื่อผู้ใช้</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" required>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">ที่อยู่อีเมล</label>

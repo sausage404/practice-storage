@@ -70,7 +70,7 @@ require "../app/components/ui/add-product.php";
                                     <td class="text-nowrap">
                                         <?php require "../app/components/ui/edit-product.php" ?>
                                         <button data-bs-toggle="modal" data-bs-target="#edit-product<?= $product['id']; ?>" class="btn btn-sm btn-warning">แก้ไข</button>
-                                        <a href="product-delete.php?id=<?= $product['id']; ?>" class="btn btn-sm btn-danger">ลบ</a>
+                                        <a href="../app/server/remove-product.php?id=<?= $product['id']; ?>" class="btn btn-sm btn-danger">ลบ</a>
                                     </td>
                                 <?php } ?>
                         </tbody>
