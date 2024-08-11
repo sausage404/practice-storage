@@ -14,17 +14,19 @@ CREATE TABLE products (
     price DECIMAL(10, 2) NOT NULL,
     category VARCHAR(50) NOT NULL,
     status BOOLEAN DEFAULT 1,
-    point INT
+    point INT DEFAULT 0
 );
 
 CREATE TABLE orders (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
-    product_id INT NOT NULL,
-    quantity INT NOT NULL,
-    status BOOLEAN DEFAULT 0,
-    FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (product_id) REFERENCES products(id)
+    address TEXT NOT NULL,
+    product_id JSON NOT NULL,
+    quantity JSON NOT NULL,
+    message TEXT DEFAULT "กำลังอยู่ในช่วงรอรับออเดอร์",
+    create_at DATETIME DEFAULT NOW(),
+    status INT DEFAULT 0,
+    FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 CREATE TABLE points (
@@ -41,6 +43,7 @@ CREATE TABLE webboards (
     title VARCHAR(255) NOT NULL,
     content TEXT NOT NULL,
     user_id INT NOT NULL,
+    create_at DATETIME DEFAULT NOW(),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
@@ -49,6 +52,7 @@ CREATE TABLE replies (
     content TEXT NOT NULL,
     user_id INT NOT NULL,
     webboard_id INT NOT NULL,
+    create_at DATETIME DEFAULT NOW(),
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (webboard_id) REFERENCES webboards(id)
 );

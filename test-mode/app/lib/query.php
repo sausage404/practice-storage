@@ -63,19 +63,19 @@ function getOrders()
     return $query;
 }
 
-function getOrderIsStatusById($id)
+function getOrderStatusById($status, $id)
 {
     global $conn;
-    $query = $conn->prepare("SELECT * FROM orders WHERE id = ? AND status = true");
-    $query->execute([$id]);
+    $query = $conn->prepare("SELECT * FROM orders WHERE id = ? AND status = ?");
+    $query->execute([$id, $status]);
     return $query;
 }
 
-function getOrderIsNotStatusById($id)
+function getOrderByStatus($status)
 {
     global $conn;
-    $query = $conn->prepare("SELECT * FROM orders WHERE id = ? AND status = false");
-    $query->execute([$id]);
+    $query = $conn->prepare("SELECT * FROM orders WHERE status = ?");
+    $query->execute([$status]);
     return $query;
 }
 
@@ -95,10 +95,10 @@ function getOrderById($id)
     return $query;
 }
 
-function getWebboard()
+function getWebboards()
 {
     global $conn;
-    $query = $conn->prepare("SELECT * FROM webboard");
+    $query = $conn->prepare("SELECT * FROM webboards ORDER BY create_at DESC");
     $query->execute();
     return $query;
 }
@@ -106,7 +106,30 @@ function getWebboard()
 function getWebboardById($id)
 {
     global $conn;
-    $query = $conn->prepare("SELECT * FROM webboard WHERE id = ?");
+    $query = $conn->prepare("SELECT * FROM webboards WHERE id = ?");
     $query->execute([$id]);
     return $query;
+}
+
+function getRepliesByWebboardId($id)
+{
+    global $conn;
+    $query = $conn->prepare("SELECT * FROM replies WHERE webboard_id = ?");
+    $query->execute([$id]);
+    return $query;
+}
+
+function getPointByUserIdAndProductId($user_id, $product_id)
+{
+    global $conn;
+    $query = $conn->prepare("SELECT * FROM points WHERE user_id = ? AND product_id = ?");
+    $query->execute([$user_id, $product_id]);
+    return $query;
+}
+
+function addNotification($user_id, $content, $status = 0)
+{
+    global $conn;
+    $query = $conn->prepare("INSERT INTO notifications (user_id, content, status) VALUES (?, ?, ?)");
+    $query->execute([$user_id, $content, $status]);
 }

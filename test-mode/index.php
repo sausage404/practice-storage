@@ -4,6 +4,7 @@
 <?php
 require "./app/components/layout/head.php";
 require "./config.php";
+require "./app/lib/query.php";
 ?>
 
 <body>

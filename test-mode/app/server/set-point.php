@@ -6,6 +6,11 @@ require "../lib/point.php";
 
 $id = $_POST['id'];
 $point = $_POST['point'];
+if(!isset($_SESSION['user'])) {
+    header("Location: /test-mode/auth/login.php");
+    exit();
+}
+
 $user_id = $_SESSION['user']['id'];
 
 if(!isset($id) || !isset($point)) {
@@ -24,6 +29,6 @@ if($point < 1 || $point > 5) {
 }
 
 $pointsync = new Point($id);
-$pointsync->setPoint($user_id, $point);
+$pointsync->setPoint($point, $user_id);
 
-header("Location: /test-mode/detail.php?id=$id");
+header("Location: /test-mode/detail.php?id=$id&&success=ส่งคะแนนสําเร็จ");
