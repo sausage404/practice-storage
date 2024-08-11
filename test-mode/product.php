@@ -26,7 +26,20 @@ if (isset($_GET['search'])) {
 
 <body>
     <?php require "./app/components/layout/navbar.php" ?>
-    <div class="container" style="padding-top: <?= isset($_SESSION['user']) ? ($_SESSION['user']['role'] == 'admin' ? 9 : 7) : 7 ?>rem;min-height: 100vh;">
+    <div class="container" style="padding-top: 7rem;min-height: 100vh;">
+        <div class="d-flex justify-content-center mb-3">
+            <div class="dropdown my-2 my-sm-0 ms-2">
+                <a class="btn btn-success btn-sm" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-filter"></i> ตัวกรองหมวดหมู่
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/test-mode/product.php?category=อาหารสุนัข">อาหารสุนัข</a></li>
+                    <li><a class="dropdown-item" href="/test-mode/product.php?category=อาหารแมว">อาหารแมว</a></li>
+                    <li><a class="dropdown-item" href="/test-mode/product.php?category=อาหารนก">อาหารนก</a></li>
+                    <li><a class="dropdown-item" href="/test-mode/product.php?category=อาหารปลา">อาหารปลา</a></li>
+                </ul>
+            </div>
+        </div>
         <div class="row pb-3" style="row-gap: 1rem;">
             <?php if (!$products) { ?>
                 <div class="row">
@@ -34,8 +47,8 @@ if (isset($_GET['search'])) {
                 </div>
             <?php }
             foreach ($products as $product) : ?>
-                <div class="col-sm-6 col-md-3">
-                    <?php require "./app/components/ui/product-card.php" ?>
+                <div class="col-sm-6 col-md-4 col-lg-3 ">
+                    <?php require "./app/components/ui/card-product.php" ?>
                 </div>
             <?php
             endforeach

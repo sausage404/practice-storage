@@ -9,7 +9,7 @@ require "../app/lib/query.php";
 
 <body>
     <?php require "../app/components/layout/navbar.php" ?>
-    <div class="container-fluid" style="min-height: 100vh;margin-top:9rem;">
+    <div class="container-fluid" style="min-height: 100vh;margin-top:7rem;">
         <?php if (isset($_GET['success'])) : ?>
             <div class="alert alert-success" role="alert">
                 <button class="btn-close float-end" onclick="location.href=location.href.split('?')[0]"></button>
@@ -24,7 +24,7 @@ require "../app/lib/query.php";
         <div class="mb-3">
             <h5 class="fw-bold">จัดการผู้ใช้งาน</h5>
         </div>
-        <div class="table-responesive">
+        <div class="table-responsive">
             <table class="table table-hover table-striped border">
                 <thead>
                     <tr>
@@ -37,6 +37,7 @@ require "../app/lib/query.php";
                 </thead>
                 <tbody>
                     <?php foreach (getUsers()->fetchAll() as $user) { ?>
+                        <tr>
                             <td><?= $user['id']; ?></td>
                             <td class="text-nowrap"><?= $user['name']; ?></td>
                             <td class="text-nowrap"><?= $user['email']; ?></td>
@@ -44,7 +45,8 @@ require "../app/lib/query.php";
                             <td class="text-nowrap">
                                 <a href="../app/server/remove-user.php?id=<?= $user['id']; ?>" class="btn btn-sm btn-danger">ลบ</a>
                             </td>
-                        <?php } ?>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>

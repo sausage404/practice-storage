@@ -111,6 +111,14 @@ function getWebboardById($id)
     return $query;
 }
 
+function getReplyById($id)
+{
+    global $conn;
+    $query = $conn->prepare("SELECT * FROM replies WHERE id = ?");
+    $query->execute([$id]);
+    return $query;
+}
+
 function getRepliesByWebboardId($id)
 {
     global $conn;

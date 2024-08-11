@@ -12,6 +12,10 @@
                 <p class="m-0"><?= $webboard['content'] ?></p>
             </div>
             <div class="modal-footer">
+                <?php if (!isset($_SESSION['user'])) { ?>
+                <?php } else if ($_SESSION['user']['id'] == $webboard['user_id'] || $_SESSION['user']['role'] == 'admin') { ?>
+                    <a href="/test-mode/app/server/remove-webboard.php?id=<?= $webboard['id'] ?>" class="btn btn-danger">ลบโพสต์</a>
+                <?php } ?>
                 <button type="button" data-bs-target="#reply-webboard<?= $webboard['id'] ?>" data-bs-toggle="modal" class="btn btn-success">การตอบกลับ</button>
             </div>
             </form>

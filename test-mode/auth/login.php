@@ -12,7 +12,7 @@ require "../app/lib/query.php";
     <div class="container-fluid" style="min-height: 100vh">
         <div class="row justify-content-center pt-5 md-pt-0" style="min-height: 100vh;">
             <div class="col-md-6 p-3 container-sm d-flex align-items-center" style="max-width: 30rem;">
-                <div class="pt-5 w-100">
+                <div class="pt-md-5 w-100">
                     <h2 class="text-center mb-4 fw-bold mt-3">เข้าสู่ระบบ</h2>
                     <form action="../app/server/login.php" method="post">
                         <?php if (isset($_GET['error'])) : ?>

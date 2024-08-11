@@ -10,7 +10,7 @@ require "./app/components/ui/add-order.php"
 
 <body>
     <?php require "./app/components/layout/navbar.php" ?>
-    <div class="container" style="padding-top: <?= isset($_SESSION['user']) ? ($_SESSION['user']['role'] == 'admin' ? 9 : 8) : 8 ?>rem;min-height: 100vh;">
+    <div class="container" style="padding-top: 7rem;min-height: 100vh;">
         <?php if (isset($_GET['success'])) : ?>
             <div class="alert alert-success" role="alert">
                 <button class="btn-close float-end" onclick="location.href=location.href.split('?')[0]"></button>
@@ -26,7 +26,7 @@ require "./app/components/ui/add-order.php"
             <button data-bs-toggle="modal" data-bs-target="#add-order" class="btn btn-sm btn-success ms-3 float-end">สั่งซื้อสินค้า</button>
             <h5 class="fw-bold">ตะกร้าสินค้า</h5>
         </div>
-        <div class="table-responesive">
+        <div class="table-responsive">
             <table class="table table-hover table-striped border">
                 <thead>
                     <tr>

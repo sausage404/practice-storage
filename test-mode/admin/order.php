@@ -10,7 +10,7 @@ require "../app/components/ui/add-product.php";
 
 <body>
     <?php require "../app/components/layout/navbar.php" ?>
-    <div class="container-fluid" style="min-height: 100vh;margin-top: 9rem;">
+    <div class="container-fluid" style="min-height: 100vh;margin-top: 7rem;">
         <?php if (isset($_GET['success'])) : ?>
             <div class="alert alert-success" role="alert">
                 <button class="btn-close float-end" onclick="location.href=location.href.split('?')[0]"></button>
@@ -25,7 +25,7 @@ require "../app/components/ui/add-product.php";
         <div class="mb-3">
             <h5 class="fw-bold">จัดการคําสั่งซื้อ</h5>
         </div>
-        <div class="table-responesive">
+        <div class="table-responsive">
             <table class="table table-hover table-striped border">
                 <thead>
                     <tr>
@@ -72,7 +72,7 @@ require "../app/components/ui/add-product.php";
         <div class="mb-3">
             <h5 class="fw-bold">รับคําสั่งซื้อ</h5>
         </div>
-        <div class="table-responesive">
+        <div class="table-responsive">
             <table class="table table-hover table-striped border">
                 <thead>
                     <tr>

@@ -11,10 +11,10 @@ require "../app/lib/query.php";
     <?php require "../app/components/layout/navbar.php" ?>
     <div class="container-fluid" style="min-height: 100vh">
         <div class="row justify-content-center pt-5 md-pt-0" style="min-height: 100vh;">
-            <div class="col-md-6" style="background-image: url(https://ga-petfoodpartners.co.uk/content/uploads/2021/11/Pet-Food-Trends-Main-Banner.png);background-repeat: no-repeat;background-size: cover;">
+            <div class="col-md-6 d-none d-md-block" style="background-image: url(https://ga-petfoodpartners.co.uk/content/uploads/2021/11/Pet-Food-Trends-Main-Banner.png);background-repeat: no-repeat;background-size: cover;">
             </div>
             <div class="col-md-6 p-3 container-sm d-flex align-items-center" style="max-width: 30rem;">
-                <div class="pt-5">
+                <div class="pt-md-5">
                     <h2 class="text-center mb-4 fw-bold mt-3">สมัครสมาชิก</h2>
                     <form action="/test-mode/app/server/register.php" method="post">
                         <?php if (isset($_GET['error'])) : ?>

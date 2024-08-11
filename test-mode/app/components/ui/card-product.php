@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card bg-light">
     <img class="card-img-top" src="./app/uploads/<?= $product['image']; ?>" alt="Title" />
     <div class="card-body">
         <span class="badge bg-secondary rounded-pill "><?= $product['category']; ?></span>
@@ -7,7 +7,7 @@
         <?php } else if ($product["status"] == 1) { ?>
             <span class="badge bg-success rounded-pill">พร้อมขาย</span>
         <?php } ?>
-        <h4 class="card-title fw-bold"><?= $product['name']; ?></h4>
+        <h5 class="card-title fw-bold my-2"><?= $product['name']; ?></h5>
         <?php
         $point = new Point($product['id']);
         echo $point->getPoint();

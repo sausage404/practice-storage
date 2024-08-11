@@ -21,6 +21,12 @@
                             <strong>ผู้ตอบ</strong>: <?= $user['name'] ?><br>
                             <strong>รายละเอียด</strong>: <?= $reply['content'] ?><br>
                             <strong>เมื่อ</strong>: <?= $reply['create_at'] ?>
+                            <?php if (!isset($_SESSION['user'])) { ?>
+                            <?php } else if ($_SESSION['user']['id'] == $webboard['user_id'] || $_SESSION['user']['role'] == 'admin') { ?>
+                                <small class="float-end">
+                                    <a class="text-danger" href="/test-mode/app/server/remove-reply.php?id=<?= $reply['id'] ?>">ลบ</a>
+                                </small>
+                            <?php } ?>
                         </p>
                     </div>
                 <?php } ?>

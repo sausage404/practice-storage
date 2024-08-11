@@ -24,7 +24,7 @@ CREATE TABLE orders (
     product_id JSON NOT NULL,
     quantity JSON NOT NULL,
     message TEXT DEFAULT "กำลังอยู่ในช่วงรอรับออเดอร์",
-    create_at DATETIME DEFAULT NOW(),
+    created_at DATETIME DEFAULT NOW(),
     status INT DEFAULT 0,
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
@@ -43,7 +43,7 @@ CREATE TABLE webboards (
     title VARCHAR(255) NOT NULL,
     content TEXT NOT NULL,
     user_id INT NOT NULL,
-    create_at DATETIME DEFAULT NOW(),
+    created_at DATETIME DEFAULT NOW(),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
@@ -52,7 +52,7 @@ CREATE TABLE replies (
     content TEXT NOT NULL,
     user_id INT NOT NULL,
     webboard_id INT NOT NULL,
-    create_at DATETIME DEFAULT NOW(),
+    created_at DATETIME DEFAULT NOW(),
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (webboard_id) REFERENCES webboards(id)
 );

@@ -138,17 +138,6 @@
                 </ul>
                 <form action="/test-mode/product.php" method="get" class="d-flex my-2 my-lg-0">
                     <input class="form-control my-sm-0 my-2" name="search" type="search" autocomplete="off" placeholder="Search" />
-                    <div class="dropdown ms-2">
-                        <a class="btn btn-success" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-funnel-fill"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/test-mode/product.php?category=อาหารสุนัข">อาหารสุนัข</a></li>
-                            <li><a class="dropdown-item" href="/test-mode/product.php?category=อาหารแมว">อาหารแมว</a></li>
-                            <li><a class="dropdown-item" href="/test-mode/product.php?category=อาหารนก">อาหารนก</a></li>
-                            <li><a class="dropdown-item" href="/test-mode/product.php?category=อาหารปลา">อาหารปลา</a></li>
-                        </ul>
-                    </div>
                     <a href="/test-mode/cart.php" class="btn btn-success my-2 my-sm-0 ms-2 d-flex" type="submit">
                         <i class="bi bi-cart-fill"></i>
                     </a>
@@ -159,7 +148,28 @@
                         <button data-bs-toggle="modal" data-bs-target="#order" class="btn btn-success my-2 my-sm-0 ms-2" type="button">
                             <i class="bi bi-bell-fill"></i>
                         </button>
-                    <?php } else { ?>
+                        <?php if ($_SESSION['user']['role'] == 'admin') { ?>
+                            <div class="dropdown my-2 my-sm-0 ms-2">
+                                <a class="btn btn-success" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-tools"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <a href="/test-mode/admin/order.php" class="dropdown-item">
+                                        จัดการออเดอร์ (Order)
+                                    </a>
+                                    <a href="/test-mode/admin/product.php" class="dropdown-item">
+                                        จัดการสินค้า (Product)
+                                    </a>
+                                    <a href="/test-mode/admin/webboard.php" class="dropdown-item">
+                                        จัดการเว็บบอร์ด (Webboard)
+                                    </a>
+                                    <a href="/test-mode/admin/user.php" class="dropdown-item">
+                                        จัดการผู้ใช้งาน (User)
+                                    </a>
+                                </ul>
+                            </div>
+                        <?php }
+                    } else { ?>
                         <a href="/test-mode/auth/login.php" class="btn btn-success my-2 my-sm-0 ms-2" type="button">
                             <i class="bi bi-person-fill-lock"></i>
                         </a>
@@ -171,24 +181,4 @@
             </div>
         </div>
     </nav>
-    <?php if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 'admin') { ?>
-        <div class="bg-light border-bottom border-top p-2 overflow-auto head">
-            <div class="container text-center text-nowrap">
-                <div class="d-flex" style="flex-wrap: nowrap;gap: 1rem;">
-                    <a href="/test-mode/admin/order.php" class="col text-decoration-none nav-link">
-                        จัดการออเดอร์ (Order)
-                    </a>
-                    <a href="/test-mode/admin/product.php" class="col text-decoration-none nav-link">
-                        จัดการสินค้า (Product)
-                    </a>
-                    <a href="/test-mode/admin/webboard.php" class="col text-decoration-none nav-link">
-                        จัดการเว็บบอร์ด (Webboard)
-                    </a>
-                    <a href="/test-mode/admin/user.php" class="col text-decoration-none nav-link">
-                        จัดการผู้ใช้งาน (User)
-                    </a>
-                </div>
-            </div>
-        </div>
-    <?php } ?>
 </div>

@@ -10,7 +10,7 @@ require "../app/components/ui/add-product.php";
 
 <body>
     <?php require "../app/components/layout/navbar.php" ?>
-    <div class="container-fluid" style="min-height: 100vh;margin-top: 9rem;">
+    <div class="container-fluid" style="min-height: 100vh;margin-top: 7rem;">
         <?php if (isset($_GET['success'])) : ?>
             <div class="alert alert-success" role="alert">
                 <button class="btn-close float-end" onclick="location.href=location.href.split('?')[0]"></button>
@@ -26,7 +26,7 @@ require "../app/components/ui/add-product.php";
             <button data-bs-toggle="modal" data-bs-target="#add-product" class="btn btn-sm btn-success ms-3 float-end">เพิ่มสินค้า</button>
             <h5 class="fw-bold">จัดการสินค้า</h5>
         </div>
-        <div class="table-responesive">
+        <div class="table-responsive">
             <table class="table table-hover table-striped border">
                 <thead>
                     <tr>
