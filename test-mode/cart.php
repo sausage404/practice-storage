@@ -10,7 +10,7 @@ require "./app/components/ui/add-order.php"
 
 <body>
     <?php require "./app/components/layout/navbar.php" ?>
-    <div class="container" style="padding-top: 7rem;min-height: 100vh;">
+    <div class="container" style="min-height: 100vh;">
         <?php if (isset($_GET['success'])) : ?>
             <div class="alert alert-success" role="alert">
                 <button class="btn-close float-end" onclick="location.href=location.href.split('?')[0]"></button>

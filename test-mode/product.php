@@ -26,8 +26,8 @@ if (isset($_GET['search'])) {
 
 <body>
     <?php require "./app/components/layout/navbar.php" ?>
-    <div class="container" style="padding-top: 7rem;min-height: 100vh;">
-        <div class="d-flex justify-content-center mb-3">
+    <div class="container" style="min-height: 100vh;">
+        <div class="d-flex justify-content-center mb-3 pt-3">
             <div class="dropdown my-2 my-sm-0">
                 <a class="btn btn-success btn-sm" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="bi bi-filter"></i> ตัวกรองหมวดหมู่

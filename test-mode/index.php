@@ -14,7 +14,7 @@ require "./app/lib/query.php";
             background-size: cover;
             background-repeat: no-repeat;
             background-image: url(/test-mode/app/assets/index.png);
-            height: 100vh;
+            height: 85.5vh;
             width: 100%;
         }
 

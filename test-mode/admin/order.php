@@ -10,7 +10,7 @@ require "../app/components/ui/add-product.php";
 
 <body>
     <?php require "../app/components/layout/navbar.php" ?>
-    <div class="container-fluid" style="min-height: 100vh;margin-top: 7rem;">
+    <div class="container-fluid pt-3" style="min-height: 85.5vh;">
         <?php if (isset($_GET['success'])) : ?>
             <div class="alert alert-success" role="alert">
                 <button class="btn-close float-end" onclick="location.href=location.href.split('?')[0]"></button>

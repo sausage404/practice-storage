@@ -1,0 +1,36 @@
+.btn-purple {
+    color: #fff;
+    background-color: #6f42c1; /* สีม่วง */
+    border-color: #6f42c1;
+}
+
+.btn-purple:hover {
+    color: #fff;
+    background-color: #5a34a1; /* สีม่วงที่เข้มขึ้น */
+    border-color: #522b91;
+}
+
+.btn-purple:focus, .btn-purple.focus {
+    color: #fff;
+    background-color: #5a34a1; /* สีม่วงที่เข้มขึ้น */
+    border-color: #522b91;
+    box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.5); /* ใช้สีม่วงใน box-shadow */
+}
+
+.btn-purple.disabled, .btn-purple:disabled {
+    color: #fff;
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+}
+
+.btn-purple:not(:disabled):not(.disabled):active, .btn-purple:not(:disabled):not(.disabled).active,
+.show > .btn-purple.dropdown-toggle {
+    color: #fff;
+    background-color: #522b91; /* สีม่วงที่เข้มขึ้น */
+    border-color: #4b2485;
+}
+
+.btn-purple:not(:disabled):not(.disabled):active:focus, .btn-purple:not(:disabled):not(.disabled).active:focus,
+.show > .btn-purple.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.5); /* ใช้สีม่วงใน box-shadow */
+}

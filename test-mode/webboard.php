@@ -12,7 +12,7 @@ require "./app/lib/query.php";
     require "./app/components/layout/navbar.php";
     require "./app/components/ui/add-webboard.php";
     ?>
-    <div class="container" style="padding-top: 7rem;min-height: 100vh;">
+    <div class="container pt-3" style="min-height: 85.5vh;">
         <?php if (isset($_GET['success'])) : ?>
             <div class="alert alert-success" role="alert">
                 <button class="btn-close float-end" onclick="location.href=location.href.split('?')[0]"></button>
