@@ -5,6 +5,7 @@
 require "../app/components/layout/head.php";
 require "../config.php";
 require "../app/lib/query.php";
+require "../app/lib/point.php";
 require "../app/components/ui/add-product.php";
 ?>
 
@@ -61,7 +62,12 @@ require "../app/components/ui/add-product.php";
                             <td><?= $product['price']; ?></td>
                             <td class="text-nowrap"><?= $product['category']; ?></td>
                             <td class="text-nowrap"><?= $product['status'] ? 'พร้อมขาย' : 'ไม่พร้อมขาย'; ?></td>
-                            <td><?= $product['point'] ? $product['point'] : 0; ?></td>
+                            <td>
+                                <?php
+                                $point = new Point($product['id']);
+                                echo $point->getPoint();
+                                ?>
+                            </td>
                             <td class="text-nowrap">
                                 <?php require "../app/components/ui/edit-product.php" ?>
                                 <button data-bs-toggle="modal" data-bs-target="#edit-product<?= $product['id']; ?>" class="btn btn-sm btn-warning">แก้ไข</button>

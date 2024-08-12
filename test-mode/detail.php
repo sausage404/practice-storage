@@ -28,13 +28,13 @@ if (isset($_SESSION['user'])) {
     <?php require "./app/components/layout/navbar.php" ?>
     <div class="container" style="padding-top: 7rem;min-height: 100vh;">
         <?php if (isset($_GET['success'])) : ?>
-            <div class="alert alert-success mb-0 mt-4" role="alert">
+            <div class="alert alert-success mb-0" role="alert">
                 <button class="btn-close float-end" onclick="location.href=location.href.split('&&')[0]"></button>
                 <strong>สําเร็จ</strong> <?php echo $_GET['success']; ?>
             </div>
         <?php endif; ?>
         <?php if (isset($_GET['error'])) : ?>
-            <div class="alert alert-danger mb-0 mt-4" role="alert">
+            <div class="alert alert-danger mb-0" role="alert">
                 <button class="btn-close float-end" onclick="location.href=location.href.split('&&')[0]"></button>
                 <strong>เกิดข้อผิดพลาด</strong> <?php echo $_GET['error']; ?>
             </div>

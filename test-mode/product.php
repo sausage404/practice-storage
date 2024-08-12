@@ -28,7 +28,7 @@ if (isset($_GET['search'])) {
     <?php require "./app/components/layout/navbar.php" ?>
     <div class="container" style="padding-top: 7rem;min-height: 100vh;">
         <div class="d-flex justify-content-center mb-3">
-            <div class="dropdown my-2 my-sm-0 ms-2">
+            <div class="dropdown my-2 my-sm-0">
                 <a class="btn btn-success btn-sm" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="bi bi-filter"></i> ตัวกรองหมวดหมู่
                 </a>
@@ -42,8 +42,8 @@ if (isset($_GET['search'])) {
         </div>
         <div class="row pb-3" style="row-gap: 1rem;">
             <?php if (!$products) { ?>
-                <div class="row">
-                    <div class="text-center">ไม่พบสินค้าที่ค้นหา</div>
+                <div>
+                    <p class="text-center">ไม่พบสินค้าที่ค้นหา</p>
                 </div>
             <?php }
             foreach ($products as $product) : ?>

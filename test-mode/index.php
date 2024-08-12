@@ -33,6 +33,9 @@ require "./app/lib/query.php";
             border: none;
             border-radius: 1rem;
             padding: 0 1rem;
+            background-color: #f8f9fa;
+            color: #212529;
+            text-decoration: none;
         }
     </style>
     <div class="bg-image">
@@ -41,9 +44,9 @@ require "./app/lib/query.php";
                 <h1 class="text-center fw-bold">หอมทรัพย์ อาหารสัตว์</h1>
                 <h5 style="line-height: 2rem;">เว็บไซต์ที่ดีที่สุดสำหรับการซื้ออาหารสัตว์ออนไลน์! ที่นี่คุณจะพบกับผลิตภัณฑ์อาหารสัตว์หลากหลายประเภทสำหรับสัตว์เลี้ยงทุกชนิด ไม่ว่าจะเป็นสุนัข แมว ปลา นก หรือสัตว์เลี้ยงอื่นๆ เรามีทุกอย่างที่คุณต้องการ</h5>
                 <div class="d-flex flex-wrap justify-content-center" style="gap: 1rem;">
-                    <button class="btn-main">อาหารสุนัข</button>
-                    <button class="btn-main">อาหารแมว</button>
-                    <button class="btn-main">อาหารปลา</button>
+                    <a href="/test-mode/product.php?category=อาหารสุนัข" class="btn-main">อาหารสุนัข</a>
+                    <a href="/test-mode/product.php?category=อาหารแมว" class="btn-main">อาหารแมว</a>
+                    <a href="/test-mode/product.php?category=อาหารปลา" class="btn-main">อาหารปลา</a>
                 </div>
             </div>
         </div>
